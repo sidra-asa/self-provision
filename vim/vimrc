@@ -1,0 +1,62 @@
+" Required settings for Vundle
+	set nocompatible	" be iMproved, required
+	filetype off		" required
+
+" set the runtime path to include Vundle and initialize
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+
+" let Vundle manage Vundle, required
+    Plugin 'gmarik/Vundle.vim'
+
+" Git wrapper 
+	Plugin 'tpope/vim-fugitive'
+
+" Nerdtree
+	Plugin 'scrooloose/nerdtree'
+
+" Vim-airline
+	Plugin 'bling/vim-airline'
+
+" easymotion
+	Plugin 'easymotion/vim-easymotion'
+" Programming Languages
+" Python - Python-mode
+	Plugin 'klen/python-mode'
+
+" Markdown
+	Plugin 'tpope/vim-markdown'
+
+" JSON
+	Plugin 'elzr/vim-json'
+
+" All of your Plugins must be added before the following line
+	call vundle#end()			" required
+	filetype plugin indent on	" required
+
+" General settings
+	set number			" Show line numbers
+	set hlsearch		" High light search results
+	set encoding=utf-8
+	set tabstop=4
+	set shiftwidth=4
+	set laststatus=2	" Displaying status line always
+	set foldmethod=indent	" method: manual, indent, syntax, expr
+	set foldnestmax=5
+
+" Color settings
+	syntax on		" Show colors
+	set background=dark
+	colorscheme vividchalk
+	set t_Co=256
+
+" ruler - show red blocks when length is over 80
+	highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+	match OverLength /\%81v.\+/
+
+" autocmd for python
+	augroup filetype_python
+		autocmd!
+		autocmd BufRead,BufNewFile *.py set filetype=python
+		autocmd FileType python set expandtab
+	augroup END
