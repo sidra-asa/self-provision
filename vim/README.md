@@ -68,9 +68,22 @@ or you can use git command in vim:
 
 	:Git <Git command>
 
+## NERDTree
+
+I use following settings:
+
+	autocmd vimenter * NERDTree
+	" Keymap settings
+	nnoremap    <leader>n :NERDTreeToggle<CR>
+    " Type \n: open/close NERDTree
+
+NERDTree will open automatically when vim starts up.
+And you can open/close NERDTree typing "\n"
+
+## NERDTree
+
 #TO DO in doc:
 
-## nerdtree
 ## airline
 ## easymotion
 ## python-mode
