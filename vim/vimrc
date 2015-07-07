@@ -60,3 +60,9 @@
 		autocmd BufRead,BufNewFile *.py set filetype=python
 		autocmd FileType python set expandtab
 	augroup END
+
+" Nerdtree settings
+	autocmd vimenter * NERDTree
+	
+	" Keymap settings
+	nnoremap	<leader>n :NERDTreeToggle<CR>
