@@ -44,6 +44,19 @@
 	set foldmethod=indent	" method: manual, indent, syntax, expr
 	set foldnestmax=5
 
+" Keymap settings
+	" For NERDTree
+	nnoremap	<leader>n :NERDTreeToggle<CR>
+				" Type \n: open/close NERDTree
+
+	" For tab in vim
+	nnoremap	<leader><Left> :tabprevious<CR>
+					" Type \<Left> to switch to previous tab
+	nnoremap	<leader><Right> :tabnext<CR>
+				" Type \<Right> to switch next tab
+	nnoremap	<leader>t :tabnew<CR>
+					" Type \t to open a new tab and edit a new file
+
 " Color settings
 	syntax on		" Show colors
 	set background=dark
@@ -63,7 +76,3 @@
 
 " Nerdtree settings
 	autocmd vimenter * NERDTree
-	
-	" Keymap settings
-	nnoremap	<leader>n :NERDTreeToggle<CR>
-				" Type \n: open/close NERDTree
