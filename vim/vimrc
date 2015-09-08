@@ -1,78 +1,82 @@
 " Required settings for Vundle
-	set nocompatible	" be iMproved, required
-	filetype off		" required
+    set nocompatible    " be iMproved, required
+    filetype off        " required
 
 " set the runtime path to include Vundle and initialize
-	set rtp+=~/.vim/bundle/Vundle.vim
-	call vundle#begin()
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
 
 " let Vundle manage Vundle, required
     Plugin 'gmarik/Vundle.vim'
 
 " Git wrapper 
-	Plugin 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-fugitive'
 
 " Nerdtree
-	Plugin 'scrooloose/nerdtree'
+    Plugin 'scrooloose/nerdtree'
 
 " Vim-airline
-	Plugin 'bling/vim-airline'
+    Plugin 'bling/vim-airline'
 
 " easymotion
-	Plugin 'easymotion/vim-easymotion'
+    Plugin 'easymotion/vim-easymotion'
 " Programming Languages
 " Python - Python-mode
-	Plugin 'klen/python-mode'
+    Plugin 'klen/python-mode'
 
 " Markdown
-	Plugin 'tpope/vim-markdown'
+    Plugin 'tpope/vim-markdown'
 
 " JSON
-	Plugin 'elzr/vim-json'
+    Plugin 'elzr/vim-json'
 
 " All of your Plugins must be added before the following line
-	call vundle#end()			" required
-	filetype plugin indent on	" required
+    call vundle#end()           " required
+    filetype plugin indent on   " required
 
 " General settings
-	set number			" Show line numbers
-	set hlsearch		" High light search results
-	set encoding=utf-8
-	set tabstop=4
-	set shiftwidth=4
-	set laststatus=2	" Displaying status line always
-	set foldmethod=indent	" method: manual, indent, syntax, expr
-	set foldnestmax=5
+    set number          " Show line numbers
+    set hlsearch        " High light search results
+    set encoding=utf-8
+    set tabstop=4
+    set shiftwidth=4
+    set expandtab       " Converting tabs to spaces
+    set laststatus=2    " Displaying status line always
+    set foldmethod=indent   " method: manual, indent, syntax, expr
+    set foldnestmax=5
 
 " Keymap settings
-	" For NERDTree
-	nnoremap	<leader>n :NERDTreeToggle<CR>
-				" Type \n: open/close NERDTree
+    " For NERDTree
+    nnoremap    <leader>n :NERDTreeToggle<CR>
+                " Type \n: open/close NERDTree
 
-	" For tab in vim
-	nnoremap	<leader><Left> :tabprevious<CR>
-					" Type \<Left> to switch to previous tab
-	nnoremap	<leader><Right> :tabnext<CR>
-				" Type \<Right> to switch next tab
-	nnoremap	<leader>t :tabnew<CR>
-					" Type \t to open a new tab and edit a new file
+    " For tab in vim
+    nnoremap    <leader><Left> :tabprevious<CR>
+                    " Type \<Left> to switch to previous tab
+    nnoremap    <leader><Right> :tabnext<CR>
+                " Type \<Right> to switch next tab
+    nnoremap    <leader>t :tabnew<CR>
+                    " Type \t to open a new tab and edit a new file
 
 " Color settings
-	syntax on		" Show colors
-	set background=dark
-	colorscheme vividchalk
-	set t_Co=256
+    syntax on       " Show colors
+    set background=dark
+    colorscheme vividchalk
+    set t_Co=256
 
 " ruler - show red blocks when length is over 80
-	highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-	match OverLength /\%81v.\+/
+    highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+    match OverLength /\%81v.\+/
 
 " autocmd for python
-	augroup filetype_python
-		autocmd!
-		autocmd BufRead,BufNewFile *.py set filetype=python
-		autocmd FileType python set expandtab
-	augroup END
+    augroup filetype_python
+        autocmd!
+        autocmd BufRead,BufNewFile *.py set filetype=python
+        autocmd FileType python set expandtab
+    augroup END
 
 " Nerdtree settings
-	autocmd vimenter * NERDTree
+    autocmd vimenter * NERDTree
+
+" auto retab before saving file
+    autocmd BufWritePre * :retab
