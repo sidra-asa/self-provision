@@ -98,3 +98,9 @@
 
 " auto retab before saving file
     autocmd BufWritePre * :retab
+
+" Add Shebang
+augroup Shebang
+    autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: utf-8 -*-\<nl>\"|$
+augroup END
+
