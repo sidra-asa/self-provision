@@ -58,6 +58,9 @@
     nnoremap    <leader>t :tabnew<CR>
                     " Type \t to open a new tab and edit a new file
 
+    nnoremap    <leader>3 :set invpaste paste?<CR>
+                    " Type \3 to enable/disable paste mode
+
 " Color settings
     syntax on       " Show colors
     set background=dark
